@@ -1,0 +1,11 @@
+extends layout
+
+block page
+  .container
+    .row
+      .col-xs-12
+        h1.animated.fadeInDown #{appTitle}
+
+block extraScripts
+  script.
+    new App
