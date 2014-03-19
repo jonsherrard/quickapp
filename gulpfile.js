@@ -21,7 +21,7 @@ gulp.task('stylus', function() {
 gulp.task('jade', function() {
   gulp.src('src/jade/index.jade')
     .pipe(watch())
-    .pipe(jade({locals: config, pretty:true}))
+    .pipe(jade({locals: config.jadeLocals, pretty:true}))
     .pipe(gulp.dest('./'))
     .pipe(livereload());
 });
