@@ -1,0 +1,16 @@
+{
+  "rsync": {
+    "src": "./",
+    "dest": "example",
+    "host": "user@host"
+  },
+  "jadeLocals": {
+    "appTitle": "New Quick App"
+  },
+  "scripts": [
+    "src/js/jquery.min.js",
+    "src/js/underscore-min.js",
+    "src/js/backbone-min.js",
+    "src/js/main.js"
+  ]
+}
