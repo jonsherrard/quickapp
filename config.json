@@ -1,6 +1,6 @@
 {
   "jadeLocals": {
-    "appTitle": "New QuickApp"
+    "appTitle": "New Quick App"
   },
   "scripts": [
     "src/js/jquery.min.js",

@@ -19,9 +19,9 @@ gulp.task('stylus', function() {
 });
 
 gulp.task('jade', function() {
-  gulp.src('src/jade/index.jade')
-    .pipe(watch())
-    .pipe(jade({locals: config.jadeLocals, pretty:true}))
+  delete require.cache[require.resolve('./config.json')];
+  return gulp.src('src/jade/index.jade')
+    .pipe(jade({locals: require('./config.json').jadeLocals, pretty:true}))
     .pipe(gulp.dest('./'))
     .pipe(livereload());
 });
@@ -33,7 +33,7 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('js', ['coffee'], function() {
-  gulp.src(config.scripts, {base: './'})
+  return gulp.src(config.scripts, {base: './'})
     .pipe(concat('app.js'))
     .pipe(gulp.dest('js'))
     .pipe(livereload());
@@ -41,6 +41,8 @@ gulp.task('js', ['coffee'], function() {
 
 gulp.task('watchScripts', function() {
   gulp.watch('src/coffee/*.coffee', ['js']);
+  gulp.watch('src/jade/**/*.jade', ['jade']);
+  gulp.watch('./config.json', ['jade']);
 });
 
 gulp.task('default', ['jade', 'stylus', 'coffee', 'js', 'watchScripts']);

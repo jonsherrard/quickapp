@@ -1,14 +1,20 @@
 @import 'nib'
 @import 'bootstrap.min.css'
 @import 'animate.css'
+col-sm = "(min-width:768px)"
+col-md = "(min-width:992px)"
 html, body
   height 100%
   width 100%
   background linear-gradient(top, #52EDC7, #5AC8FB)
+  font-size 1.1em
 *
   box-sizing border-box
-
-h1
+h1,h2,h3,p,span,a,*
   color white
   font-weight 100
+a:hover, a:visited
+    text-decoration:none
 
+.container-fluid
+  max-width 960px

@@ -1,10 +1,28 @@
 extends layout
 
 block page
-  .container
+  .container-fluid
     .row
       .col-xs-12
-        h1.animated.fadeInDown #{appTitle}
+        h1.animated.fadeInUp #{appTitle}
+        h2.animated.slideInRight Run "Gulp" from the command line to start a live reload server.
+        hr
+    .row
+      .col-xs-12.col-sm-6
+        h2 Quick App Includes:
+        ul
+          li Bootstrap for responsiveness
+          li Animate.css for animations
+          li Jade for hassle free HTML markup
+          li Stylus and Nib for cross broswer css loveliness
+          li CoffeeScript for productivity
+          li jQuery, Underscore and Backbone, for powerful & structured JS tooling
+          li Gulp for speedy compilation, concatenation, and live reloading
+      .col-xs-12.col-sm-6
+        h2.pull-right
+            | Built by&nbsp;
+            a(href="http://devular.com") Devular.
+
 
 block extraScripts
   script.
