@@ -11,7 +11,7 @@
     }
 
     App.prototype.initialize = function() {
-      return alert('wanger');
+      return alert('babelicious');
     };
 
     return App;

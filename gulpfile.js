@@ -30,13 +30,13 @@ gulp.task('coffee', function() {
   gulp.src('src/coffee/*.coffee')
     .pipe(watch())
     .pipe(coffee())
-    .pipe(gulp.dest('src/js'))
-    .pipe(livereload());
+    .pipe(gulp.dest('js'))
+    .pipe(livereload())
 });
 
-gulp.task('js', ['coffee'], function() {
+gulp.task('js', function() {
   gulp.src(config.scripts, {base: './'})
-    .pipe(concat('app.js'))
+    .pipe(concat('deps.js'))
     .pipe(gulp.dest('js'))
     .pipe(livereload());
 });
