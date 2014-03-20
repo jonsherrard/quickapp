@@ -1,5 +1,5 @@
 class App extends Backbone.View
   initialize: ->
-  	alert 'new app that rules'
+  	console.log 'Hi World'
 
 window.App = App
