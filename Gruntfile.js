@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
+  var config = grunt.file.readJSON('./config.json');
   grunt.initConfig({
-    config: grunt.file.readJSON('./config.json'),
     uglify: {
       dist: {
         files: {

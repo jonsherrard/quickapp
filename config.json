@@ -1,9 +1,9 @@
 {
   "rsync": {
-    "src": "./"
+    "src": "./",
     "dest": "example",
     "host": "user@host"
-  }
+  },
   "jadeLocals": {
     "appTitle": "New Quick App"
   },
