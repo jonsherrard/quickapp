@@ -3,28 +3,36 @@ extends layout
 block page
   .container-fluid
     .row
-      .col-xs-12
-        h1.animated.fadeInUp #{appTitle}
-        h2.animated.slideInRight Run "Gulp" from the command line to start a live reload server.
+      .col-xs-12.animated.fadeInDownBig
+        h1.text-center #{appTitle}
+        h2.text-center Run "Gulp" from the command line to start a live reload server.
         hr
     .row
       .col-xs-12.col-sm-6
         h2.text-center Libraries
         hr
         ul
-          li Bootstrap for responsiveness
-          li Animate.css for animations
-          li jQuery, Underscore and Backbone, for powerful & structured JS tooling
+          li Bootstrap.css
+          li Animate.css
+          li jQuery
+          li Underscore.js
+          li Backbone.js
       .col-xs-12.col-sm-6
         h2.text-center Build Tools
         hr
         ul
-          li Gulp for speedy compilation, concatenation, and live reloading
+          li Gulp.js - Live reloading and speedy concatenation and compilation
           li CoffeeScript for productivity
           li Jade for hassle free HTML markup
           li Stylus and Nib for cross broswer css loveliness
+          li Grunt for rock solid minification and deployment
+    .row
       .col-xs-12
-        h3.text-center
+        h4.text-center: a(href="http://github.com/jonsherrard/quickapp") Github Repository.
+    .row
+      .col-xs-12
+        h4.text-center Built with an underlying feeling of contempt.
+        h4.text-center
           a(href="http://devular.com") Devular.
 
 
