@@ -11,7 +11,7 @@
     }
 
     App.prototype.initialize = function() {
-      return console.log('Hi World Life mother awesome');
+      return console.log('Word Life');
     };
 
     return App;

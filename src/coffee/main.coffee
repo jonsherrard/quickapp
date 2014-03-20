@@ -1,5 +1,5 @@
 class App extends Backbone.View
   initialize: ->
-  	console.log 'Hi World Life mother awesome'
+  	console.log 'Word Life'
 
 window.App = App
