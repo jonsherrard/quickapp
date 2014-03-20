@@ -11,7 +11,7 @@ gulp.task('stylus', function() {
   gulp.src('src/stylus/*.styl')
     .pipe(watch())
     .pipe(stylus({
-      use:['nib'], 
+      use:['nib'],
       set:['include css']}
     ))
     .pipe(gulp.dest('css'))
@@ -27,18 +27,20 @@ gulp.task('jade', function() {
 });
 
 gulp.task('coffee', function() {
-  gulp.src('src/coffee/*.coffee')
-    .pipe(watch())
+  return gulp.src('src/coffee/*.coffee')
     .pipe(coffee())
-    .pipe(gulp.dest('js'))
-    .pipe(livereload())
+    .pipe(gulp.dest('src/js'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['coffee'], function() {
   gulp.src(config.scripts, {base: './'})
-    .pipe(concat('deps.js'))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('js'))
     .pipe(livereload());
 });
 
-gulp.task('default', ['jade', 'stylus', 'coffee', 'js']);
+gulp.task('watchScripts', function() {
+  gulp.watch('src/coffee/*.coffee', ['js']);
+});
+
+gulp.task('default', ['jade', 'stylus', 'coffee', 'js', 'watchScripts']);
