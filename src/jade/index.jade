@@ -3,13 +3,11 @@ extends layout
 block page
   .container-fluid
     .row
-      .col-xs-12.animated.fadeInDownBig
-        h1.text-center #{appTitle}
-        h2.text-center Run "Gulp" from the command line to start a live reload server.
-        hr
-    .row
+      .col-xs-12
+        h1.animated.fadeInDown #{appTitle}
+    .row.padded-row
       .col-xs-12.col-sm-6
-        h2.text-center Libraries
+        h2 Libraries:
         hr
         ul
           li Bootstrap.css
@@ -18,18 +16,33 @@ block page
           li Underscore.js
           li Backbone.js
       .col-xs-12.col-sm-6
-        h2.text-center Build Tools
+        h2 Build Tools:
         hr
         ul
-          li Gulp.js - Live reloading and speedy concatenation and compilation
+          li Gulp.js - Live reloading, concatenation, and compilation
           li CoffeeScript for productivity
           li Jade for hassle free HTML markup
           li Stylus and Nib for cross broswer css loveliness
           li Grunt for rock solid minification and deployment
+    .row.padded-row
+      .col-xs-12.col-sm-12
+        h2 Installation & Usage
+        hr
     .row
       .col-xs-12
-        h4.text-center: a(href="http://github.com/jonsherrard/quickapp") Github Repository.
-    .row
+        p Clone from github or download the zipfile. From the command line run the following:
+        pre
+          $ npm install && gulp
+        p That's it! How you serve the files is up to you. You may have Apache or Nginx running. You could use PHPs server:
+        pre
+          $ php -S localhost:portno
+    .row.padded-row
+      .col-xs-12.text-center
+        a.btn.btn-lg.btn-danger(href="") Download
+    .row.padded-row
+      .col-xs-12.text-center
+        a.btn-lg.btn.btn-primary(href="http://github.com/jonsherrard/quickapp") Github Repository
+    .row.padded-row
       .col-xs-12
         h4.text-center Built with an underlying feeling of contempt.
         h4.text-center
