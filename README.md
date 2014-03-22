@@ -1,7 +1,9 @@
-quickapp
+QuickApp
 ========
 
-# Installation
+[tools.devular.com/quickapp](http://tools.devular.com/quickapp)
+
+## Installation
 
 Clone from github or download the zipfile.
     $ git clone git@github.com:jonsherrard/quickapp.git
@@ -17,6 +19,6 @@ Or Python's:
 
 Gulp will launch a live reload server, and watch your source files for changes
 
-# Contributions
+## Contributions
 
 Very welcome.
