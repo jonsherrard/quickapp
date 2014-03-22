@@ -30,15 +30,25 @@ block page
         hr
     .row
       .col-xs-12
-        p Clone from github or download the zipfile. From the command line run the following:
+        p Clone from github or download the zipfile.
+        pre
+          $ git clone git@github.com:jonsherrard/quickapp.git
+        p Copy the example config file to config.json
+        pre
+          $ cp example.config.json config.json
+        p From the command line run the following:
         pre
           $ npm install && gulp
-        p That's it! How you serve the files is up to you. You may have Apache or Nginx running. You could use PHPs server:
+        p That's it! How you serve the files is up to you. You may have Apache or Nginx running.
+        p You could use PHP's simple static server:
         pre
-          $ php -S localhost:portno
+          $ php -S localhost:3456
+        p Or Python's
+        pre
+          $ python -m SimpleHTTPServer
     .row.padded-row
       .col-xs-12.text-center
-        a.btn.btn-lg.btn-danger(href="") Download
+        a.btn.btn-lg.btn-danger(href="https://github.com/jonsherrard/quickapp/archive/master.zip") Download
     .row.padded-row
       .col-xs-12.text-center
         a.btn-lg.btn.btn-primary(href="http://github.com/jonsherrard/quickapp") Github Repository
