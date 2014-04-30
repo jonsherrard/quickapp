@@ -9,7 +9,6 @@ var gulp = require('gulp'),
 
 gulp.task('stylus', function() {
   gulp.src('src/stylus/*.styl')
-    .pipe(watch())
     .pipe(stylus({
       use:['nib'],
       set:['include css']}
@@ -40,6 +39,7 @@ gulp.task('js', ['coffee'], function() {
 });
 
 gulp.task('watchScripts', function() {
+  gulp.watch('src/stylus/*.styl', ['stylus']);
   gulp.watch('src/coffee/*.coffee', ['js']);
   gulp.watch('src/jade/**/*.jade', ['jade']);
   gulp.watch('./config.json', ['jade']);
