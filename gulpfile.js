@@ -5,6 +5,9 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   livereload = require('gulp-livereload'),
   watch = require('gulp-watch'),
+  prompt = require('gulp-prompt'),
+  connect = require('connect'),
+  http = require('http'),
   config = require('./config.json');
 
 gulp.task('stylus', function() {
@@ -36,6 +39,19 @@ gulp.task('js', ['coffee'], function() {
     .pipe(concat('app.js'))
     .pipe(gulp.dest('js'))
     .pipe(livereload());
+});
+
+gulp.task('serve', ['default'], function() {
+  return gulp.src('./')
+    .pipe(prompt.prompt({type:'input', name:'port', 'message':'Enter port number'}, function(input) {
+      var port = input.port;
+      var app = connect()
+        .use(connect.logger('dev'))
+        .use(connect.static('./'));
+      http.createServer(app).listen(port); 
+      console.info('Server running on port: ', port);
+    }
+  ));
 });
 
 gulp.task('watchScripts', function() {

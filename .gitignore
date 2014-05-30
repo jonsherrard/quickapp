@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
 index.html
+config.json
 /css/*
 /js/*
